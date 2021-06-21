@@ -1,0 +1,109 @@
+@import 'config';
+@import 'nav';
+@import 'footer';
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40vw;
+}
+
+.timer-container {
+	display: grid;
+	grid-template-rows: 1fr 7fr 2fr;
+	padding: 1em;
+	background: $primary-background;
+	flex: 1;
+	border-radius: 0.3em;
+	justify-items: center;
+}
+
+.timer-options {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0.5em;
+	grid-gap: 1em;
+	width: 80%;
+
+	&-item {
+		padding: 0.1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $primary-white;
+		background: $primary-background;
+		height: 2em;
+		border-radius: $primary-border-radius;
+		min-width: fit-content;
+		cursor: pointer;
+		opacity: 0.7;
+		transition: $primary-transition;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.active {
+		font-weight: $font-weight-bold;
+		background: darken(rgba($color: $primary-white, $alpha: 0.15), 35%);
+		color: darken($color: $primary-white, $amount: 10%);
+		opacity: 1;
+	}
+
+	.active:hover {
+		background: darken(rgba($color: $primary-white, $alpha: 0.15), 15%);
+	}
+}
+
+.timer {
+	font-size: 15em;
+	color: $primary-white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.control {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	
+	&Btn {
+		cursor: pointer;
+		width: 7em;
+		height: 80%;
+		font-size: 2em;
+		background: $primary-white;
+		outline-width: 0px;
+		border: none;
+			border-bottom-color: currentcolor;
+			border-bottom-style: none;
+			border-bottom-width: medium;
+		border-radius: $primary-border-radius - 0.1;
+		text-transform: uppercase;
+		color: $primary-background-clr;
+		box-shadow: 0px 0.15em 0px 0px #ffffffc4;
+		border-bottom: 0.1px solid #00000014;
+		font-family: $primary-font-family;
+	}
+
+	&-forward {
+		display: none;
+		position: absolute;
+		transform: translateX(11em);
+		cursor: pointer;
+	}
+}
+
+.stop {
+	box-shadow: none;
+}
+.stop > span {
+	display: none;
+}
+
+.stop:after {
+	content: 'stop';
+}

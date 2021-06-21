@@ -1,0 +1,50 @@
+nav {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 30%;
+	border-bottom: 0.01px solid rgba(44, 44, 44, 0.25);
+	justify-items: center;
+	padding: 1em;
+}
+
+.nav-logo {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.nav-logo>span {
+	color: $primary-white;
+	font-size: $logo-font-size;
+	font-weight: $font-weight-bold;
+	padding-left: 5px;
+}
+
+.nav-options {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr;
+	align-items: center;
+	grid-gap: 1em;
+}
+
+.nav-options-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: $primary-background;
+	padding: 0.3em;
+	border-radius: $primary-border-radius;
+	cursor: pointer;
+	opacity: 0.7;
+	transition: $primary-transition;
+}
+
+.nav-options-item:hover {
+	opacity: 1;
+}
+
+.nav-options-item>span {
+	color: $primary-white;
+	padding: 0 5px;
+	font-size: $primary-font-size;
+}

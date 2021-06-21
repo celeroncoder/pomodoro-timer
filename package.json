@@ -1,0 +1,40 @@
+{
+	"name": "pomodoro",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"start": "node dist/bundle.min.js",
+		"build": "NODE_ENV=production rollup -c",
+		"dev": "rollup -c -w",
+		"js": "rollup src/scripts/index.js -o public/scripts/index.js -w"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"csurf": "^1.11.0",
+		"dotenv": "^10.0.0",
+		"ejs": "3.1.6",
+		"express": "4.17.1",
+		"express-session": "^1.17.2",
+		"helmet": "^4.6.0",
+		"morgan": "^1.10.0",
+		"rate-limiter-flexible": "^2.2.2",
+		"redis": "^3.1.2",
+		"winston": "^3.3.3"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.14.6",
+		"@babel/plugin-proposal-optional-chaining": "^7.14.5",
+		"@rollup/plugin-run": "^2.0.2",
+		"rollup": "^2.52.1",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-scss": "^2.6.1",
+		"sass": "^1.35.1"
+	}
+}
