@@ -18,10 +18,6 @@ export const headerOptions = {
 }
 
 export const audio = {
-	click: new Audio('/audio/switch.mp3')
-}
-
-export const timerData = {
-	minutes: 30,
-	seconds: 0
+	click: new Audio('/audio/switch.mp3'),
+	bell: new Audio('/audio/bell.mp3')
 }
