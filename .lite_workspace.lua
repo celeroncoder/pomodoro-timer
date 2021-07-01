@@ -1,0 +1,1 @@
+return {["type"]="leaf",["views"]={[1]={["type"]="doc",["filename"]="src/scripts/index.js",["text"]=false,["scroll"]={["x"]=0,["y"]=800},["selection"]={[1]=1,[2]=1,[3]=1,[4]=1},["active"]=true}},["active_view"]=1}

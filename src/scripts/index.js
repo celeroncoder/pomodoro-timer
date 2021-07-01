@@ -21,6 +21,7 @@ function timerUIChange() {
 
 let minutesLeft = 25;
 let secondsLeft = 0;
+let isPaused = false;
 
 function start() {
 	audio.click.play();
@@ -30,17 +31,18 @@ function start() {
 	change.minutes();
 	change.seconds();
 
-	let minutes_interval = setInterval(minutesTimer, 60 * 1000);
-	let seconds_interval = setInterval(secondsTimer, 1000);
-
+	if (!isPaused) {
+		let minutes_interval = setInterval(minutesTimer, 60 * 1000);
+		let seconds_interval = setInterval(secondsTimer, 1000);
+	}
 	function minutesTimer() {
 		minutesLeft--;
 		change.minutes();
 	}
 
 	function secondsTimer() {
-		if (secondsLeft <= 24) {
-			if (minutesLeft <= 24) {
+		if (secondsLeft <= 0) {
+			if (minutesLeft <= 0) {
 				clearInterval(minutes_interval);
 				clearInterval(seconds_interval);
 				audio.bell.play();
@@ -50,10 +52,6 @@ function start() {
 		}
 		secondsLeft--;
 		change.seconds();
-	}
-
-	if (parseInt(timer.seconds.textContent) <= 9) {
-		timer.seconds.textContent = `0${timer.seconds.textContent}`
 	}
 }
 
